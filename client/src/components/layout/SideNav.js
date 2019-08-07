@@ -7,11 +7,21 @@ class SideNav extends Component {
     return (
       <div className="sidenav">
         <img src={logo} className="logo" alt="logo" />
-        <a href="#">Home</a>
-        <a href="#">Downloads</a>
+        <Link to="/">Home</Link>
+
+        <a href="/downloads">Downloads</a>
         <a href="#">FB</a>
         <a href="#">Twitter</a>
         <a href="#">Instagram</a>
+        <div className="spacer10" />
+
+        <Link to="/register">
+          <button>Register</button>
+        </Link>
+        <Link to="/login">
+          <button>Log In</button>
+        </Link>
+        <div className="spacer10" />
       </div>
     );
   }
