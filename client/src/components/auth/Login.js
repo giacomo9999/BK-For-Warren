@@ -22,12 +22,8 @@ class Login extends Component {
 
     return (
       <div className="container-inner">
-        <Link to="/">
-          <button>Home</button>
-        </Link>
-        <Link to="/register">
-          <h4>Don't have an account?</h4>
-        </Link>
+        <h3>Log In to Brooklyn For Warren</h3>
+
         <form className="h-form" noValidate onSubmit={this.onSubmit}>
           <label className="h-label">E-Mail</label>
           <input
@@ -47,9 +43,15 @@ class Login extends Component {
             id="password"
             type="text"
           />
-
+          <div className="spacer5" />
           <button type="submit">Sign Up</button>
+          <Link to="/">
+            <button>Cancel</button>
+          </Link>
         </form>
+        <Link to="/register">
+          <button>Don't Have An Account?</button>
+        </Link>
       </div>
     );
   }

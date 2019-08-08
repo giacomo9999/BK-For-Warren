@@ -32,12 +32,7 @@ class Register extends Component {
     const { errors } = this.state;
     return (
       <div className="container-inner">
-        <Link to="/">
-          <button>Home</button>
-        </Link>
-        <Link to="/login">
-          <h4>Already have an account?</h4>
-        </Link>
+          <h3>Register With Brooklyn For Warren</h3>
         <form className="h-form" noValidate onSubmit={this.onSubmit}>
           <label className="h-label">Name</label>
           <input
@@ -75,8 +70,15 @@ class Register extends Component {
             id="password2"
             type="text"
           />
+          <div className="spacer5" />
           <button type="submit">Sign Up</button>
+          <Link to="/">
+            <button>Cancel</button>
+          </Link>
         </form>
+        <Link to="/login">
+          <button>Login With Existing Account</button>
+        </Link>
       </div>
     );
   }
