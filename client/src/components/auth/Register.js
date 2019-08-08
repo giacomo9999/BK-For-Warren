@@ -29,13 +29,54 @@ class Register extends Component {
   };
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="container-inner">
         <Link to="/">
           <button>Home</button>
         </Link>
-        <Link to="/login"><p>Already have an account?</p></Link>
-        
+        <Link to="/login">
+          <h4>Already have an account?</h4>
+        </Link>
+        <form className="h-form" noValidate onSubmit={this.onSubmit}>
+          <label className="h-label">Name</label>
+          <input
+            className="h-input"
+            onChange={this.onChange}
+            value={this.state.name}
+            error={errors.name}
+            id="name"
+            type="text"
+          />
+          <label className="h-label">E-Mail</label>
+          <input
+            className="h-input"
+            onChange={this.onChange}
+            value={this.state.email}
+            error={errors.email}
+            id="email"
+            type="text"
+          />
+          <label className="h-label">Password</label>
+          <input
+            className="h-input"
+            onChange={this.onChange}
+            value={this.state.password}
+            error={errors.password}
+            id="password"
+            type="text"
+          />
+          <label className="h-label">Repeat Password</label>
+          <input
+            className="h-input"
+            onChange={this.onChange}
+            value={this.state.password2}
+            error={errors.password2}
+            id="password2"
+            type="text"
+          />
+          <button type="submit">Sign Up</button>
+        </form>
       </div>
     );
   }
