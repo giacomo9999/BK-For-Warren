@@ -76,6 +76,10 @@ p {
   color: black;
 }
 
+.red-error-text {
+  color: red;
+}
+
 .container-outer {
   width: 35%;
   padding: 10px;

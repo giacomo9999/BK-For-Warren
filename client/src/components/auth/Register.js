@@ -48,6 +48,7 @@ class Register extends Component {
         <h3>Register With Brooklyn For Warren</h3>
         <form className="h-form" noValidate onSubmit={this.onSubmit}>
           <label className="h-label">Name</label>
+          <span className="red-error-text">{errors.name}</span>
           <input
             className={classnames("h-input", { invalid: errors.name })}
             onChange={this.onChange}
@@ -57,8 +58,9 @@ class Register extends Component {
             type="text"
           />
           <label className="h-label">E-Mail</label>
+          <span className="red-error-text">{errors.email}</span>
           <input
-            className="h-input"
+            className={classnames("h-input", { invalid: errors.email })}
             onChange={this.onChange}
             value={this.state.email}
             error={errors.email}
@@ -66,8 +68,9 @@ class Register extends Component {
             type="text"
           />
           <label className="h-label">Password</label>
+          <span className="red-error-text">{errors.password}</span>
           <input
-            className="h-input"
+            className={classnames("h-input", { invalid: errors.password })}
             onChange={this.onChange}
             value={this.state.password}
             error={errors.password}
@@ -75,8 +78,9 @@ class Register extends Component {
             type="text"
           />
           <label className="h-label">Repeat Password</label>
+          <span className="red-error-text">{errors.password2}</span>
           <input
-            className="h-input"
+            className={classnames("h-input", { invalid: errors.password2 })}
             onChange={this.onChange}
             value={this.state.password2}
             error={errors.password2}
