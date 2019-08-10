@@ -11,6 +11,13 @@ class Login extends Component {
     this.state = { email: "", password: "", errors: {} };
   }
 
+  componentDidMount() {
+    // Redirects to Dashboard if logged-in user attempts to navigate to Register page
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard"); // push user to dashboard when they log in
@@ -72,7 +79,7 @@ class Login extends Component {
             type="text"
           />
           <div className="spacer5" />
-          <button type="submit">Sign Up</button>
+          <button type="submit">Log In</button>
           <Link to="/">
             <button>Cancel</button>
           </Link>
