@@ -35,7 +35,7 @@ class Login extends Component {
     e.preventDefault();
     const userData = { email: this.state.email, password: this.state.password };
     console.log(userData);
-    this.props.login(userData);
+    this.props.loginUser(userData);
     // Since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
   };
 

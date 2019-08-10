@@ -77,7 +77,9 @@ p {
 }
 
 .red-error-text {
-  color: red;
+  background-color: rgb(196, 52, 52);
+  color: white;
+  
 }
 
 .container-outer {
@@ -312,7 +314,7 @@ button:hover {
 /* Form (General Use)*/
 
 .h-form {
-  width: 50%;
+  width: 75%;
   margin: 15px auto;
   /* border color 9 */
   border: 1px solid #acbac9;
