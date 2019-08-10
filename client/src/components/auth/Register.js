@@ -82,7 +82,7 @@ class Register extends Component {
             value={this.state.password}
             error={errors.password}
             id="password"
-            type="text"
+            type="password"
           />
           <label className="h-label">Repeat Password</label>
           <span className="red-error-text">{errors.password2}</span>
@@ -92,7 +92,7 @@ class Register extends Component {
             value={this.state.password2}
             error={errors.password2}
             id="password2"
-            type="text"
+            type="password"
           />
           <div className="spacer5" />
           <button type="submit">Sign Up</button>

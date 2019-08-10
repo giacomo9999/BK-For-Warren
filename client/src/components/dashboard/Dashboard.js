@@ -10,10 +10,11 @@ class Dashboard extends Component {
   };
 
   render() {
+    console.log(this.props.auth);
     const { user } = this.props.auth;
     return (
       <div className="container-outer">
-        <h4>User {user.name.split("")[0]} You Are Logged In</h4>
+        <h4>User {user.name} Is Logged In</h4>
         <button onClick={this.onLogoutClick}>Log Out</button>
       </div>
     );

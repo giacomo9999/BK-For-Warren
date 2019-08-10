@@ -76,7 +76,7 @@ class Login extends Component {
             value={this.state.password}
             error={errors.password}
             id="password"
-            type="text"
+            type="password"
           />
           <div className="spacer5" />
           <button type="submit">Log In</button>
