@@ -2,7 +2,11 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-// const keys = require("../../config/keys");
+const keys = require("../../config/keys");
+
+
+const isProduction = process.env.NODE_ENV === "production";
+const secretOrKey = isProduction ? process.env.secretOrKey : keys.secretOrKey;
 
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
@@ -82,7 +86,7 @@ router.post("/login", (req, res) => {
         //Sign token
         jwt.sign(
           payload,
-          process.env.secretOrKey,
+          secretOrKey,
           { expiresIn: 31556926 },
           (err, token) => {
             res.json({ success: true, token: "Bearer " + token });

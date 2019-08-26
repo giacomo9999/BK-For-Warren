@@ -3,18 +3,21 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
+const keys = require("./config/keys");
 
 const users = require("./routes/api/users");
-
 const app = express();
+
+
 
 //BodyParser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //DB Config
-// const db = require("./config/keys").mongoURI;
-const db = process.env.mongoURI;
+// const db = process.env.mongoURI;
+const isProduction = process.env.NODE_ENV === "production";
+const db = isProduction ? process.env.mongoURI : keys.mongoURI;
 
 //Connect to MongoDB
 mongoose
