@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
+// const keys = require("../../config/keys");
 require("dotenv").config();
 
 // const isProduction = process.env.NODE_ENV === "production";
