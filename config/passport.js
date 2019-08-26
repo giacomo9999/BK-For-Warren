@@ -2,12 +2,13 @@ const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const mongoose = require("mongoose");
 const User = mongoose.model("users");
-const keys = require("../config/keys");
+// const keys = require("../config/keys");
+require("dotenv").config();
 
 const opts = {};
-const isProduction = process.env.NODE_ENV === "production";
+// const isProduction = process.env.NODE_ENV === "production";
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = isProduction ? process.env.secretOrKey : keys.secretOrKey;
+opts.secretOrKey = process.env.secretOrKey;
 
 module.exports = passport => {
   passport.use(

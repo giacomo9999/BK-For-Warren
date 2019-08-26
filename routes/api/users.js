@@ -3,9 +3,10 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+require("dotenv").config();
 
-const isProduction = process.env.NODE_ENV === "production";
-const secretOrKey = isProduction ? process.env.secretOrKey : keys.secretOrKey;
+// const isProduction = process.env.NODE_ENV === "production";
+const secretOrKey = process.env.secretOrKey;
 
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
