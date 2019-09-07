@@ -10,9 +10,9 @@ class SideNav extends Component {
         <Link to="/">Home</Link>
 
         <a href="/downloads">Downloads</a>
-        <a href="#">FB</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
+        <a href="http://www.facebook.com">FB</a>
+        <a href="http://www.twitter.com">Twitter</a>
+        <a href="http://www.instagram.com">Instagram</a>
         <div className="spacer10" />
 
         <Link to="/register">
