@@ -7,6 +7,7 @@ const path = require("path");
 require("dotenv").config();
 
 const users = require("./routes/api/users");
+const events = require("./routes/api/events");
 const app = express();
 
 //BodyParser middleware
@@ -32,6 +33,7 @@ require("./config/passport")(passport);
 
 //Routes
 app.use("/api/users", users);
+app.use("/api/events", events);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
